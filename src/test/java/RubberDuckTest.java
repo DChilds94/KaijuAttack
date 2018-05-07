@@ -73,5 +73,6 @@ public class RubberDuckTest {
         assertEquals(-1, rubberDuck.getHealthValue());
         assertEquals("Final Quack", rubberDuck.die("Final Quack"));
     }
+
 }
 

@@ -2,7 +2,7 @@ package army;
 
 import monster.Kaiju;
 
-public class Tank extends Vehicle {
+public class Tank extends Vehicle implements VehicleAttackable, Killable {
 
     private String type;
     private int healthValue;
@@ -15,5 +15,11 @@ public class Tank extends Vehicle {
     }
     public void attack (Kaiju kaiju) {
         kaiju.setHealthValue(kaiju.getHealthValue() - getAttackPower());
+    }
+    public String die(String lastWords) {
+        if (this.getHealthValue() <= 0) {
+        }
+        return lastWords;
+
     }
 }

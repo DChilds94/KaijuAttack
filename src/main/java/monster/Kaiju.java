@@ -32,12 +32,7 @@ public abstract class Kaiju {
     public String move(String movement){
         return movement;
     }
-    public String die(String lastWords) {
-        if (this.getHealthValue() <= 0) {
-            }
-       return lastWords;
 
-    }
 
 
 

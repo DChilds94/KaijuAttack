@@ -17,4 +17,10 @@ public class RubberDuck extends Kaiju implements Attackable {
     public void attack(Vehicle vehicle){
         vehicle.setHealthValue(vehicle.getHealthValue() -  getAttackPower());
     }
+    public String die(String lastWords) {
+        if (this.getHealthValue() <= 0) {
+        }
+        return lastWords;
+
+    }
 }

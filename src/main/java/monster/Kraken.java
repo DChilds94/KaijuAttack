@@ -19,5 +19,10 @@ public class Kraken extends Kaiju implements Roarable {
     public void attack(Vehicle vehicle){
         vehicle.setHealthValue(vehicle.getHealthValue() -  getAttackPower());
     }
+    public String die(String lastWords) {
+        if (this.getHealthValue() <= 0) {
+        }
+        return lastWords;
+    }
 
 }

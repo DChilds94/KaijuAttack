@@ -42,6 +42,25 @@ public class TankTest {
         tank.attack(kraken);
         assertEquals(90, kraken.getHealthValue() );
     }
+    @Test
+    public void canDie(){
+        assertEquals("Boom!", tank.die("Boom!"));
+    }
+    @Test
+    public void canBeDestroyedByRubberDuck(){
+        rubberDuck.attack(tank);
+        rubberDuck.attack(tank);
+        rubberDuck.attack(tank);
+        rubberDuck.attack(tank);
+        rubberDuck.attack(tank);
+        rubberDuck.attack(tank);
+        rubberDuck.attack(tank);
+        rubberDuck.attack(tank);
+        rubberDuck.attack(tank);
+        rubberDuck.attack(tank);
+        assertEquals("Boom!", tank.die("Boom!"));
+        assertEquals(0, tank.getHealthValue());
+    }
 
 }
 

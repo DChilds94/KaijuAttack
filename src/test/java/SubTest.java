@@ -44,6 +44,24 @@ public class SubTest {
         sub.attack(kraken);
         assertEquals(99, kraken.getHealthValue());
     }
-
+    @Test
+    public void canDie() {
+        assertEquals("Boom!", sub.die("Boom!"));
+    }
+    @Test
+    public void canBeDestroyedByRubberDuck(){
+        rubberDuck.attack(sub);
+        rubberDuck.attack(sub);
+        rubberDuck.attack(sub);
+        rubberDuck.attack(sub);
+        rubberDuck.attack(sub);
+        rubberDuck.attack(sub);
+        rubberDuck.attack(sub);
+        rubberDuck.attack(sub);
+        rubberDuck.attack(sub);
+        rubberDuck.attack(sub);
+        assertEquals("Boom!", sub.die("Boom!"));
+        assertEquals(0, sub.getHealthValue());
+    }
 
 }
