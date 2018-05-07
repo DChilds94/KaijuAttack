@@ -1,6 +1,7 @@
 import army.Sub;
 import army.Tank;
 import monster.Kraken;
+import monster.RubberDuck;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -42,6 +43,25 @@ public class KrakenTest {
         tank.attack(kraken);
         assertEquals(98, kraken.getHealthValue());
     }
+    @Test
+    public void canDie(){
+        assertEquals("I gotta bounce, see yars afffter!", kraken.die("I gotta bounce, see yars afffter!"));
+    }
+    @Test
+    public void canBeDefeatedBySub(){
+        kraken = new Kraken("Late kraken", 1, 15);
+        sub.attack(kraken);
+        assertEquals(0, kraken.getHealthValue());
+        assertEquals("I gotta bounce, see yar afffter!", kraken.die("I gotta bounce, see yar afffter!"));
+    }@Test
+    public void canBeDefeatedByTank(){
+        kraken = new Kraken("Late kraken", 1, 15);
+        tank.attack(kraken);
+        assertEquals(-1, kraken.getHealthValue());
+        assertEquals("I gotta bounce, see yar afffter!", kraken.die("I gotta bounce, see yar afffter!"));
+    }
+
+
 
 
 

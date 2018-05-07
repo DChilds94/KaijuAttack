@@ -1,9 +1,10 @@
 package army;
 
 import monster.Kaiju;
+import
 
 
-public class Sub extends Vehicle implements VehicleAttackable {
+public class Sub extends Vehicle implements VehicleAttackable, Killable {
 
     private String type;
     private int healthValue;

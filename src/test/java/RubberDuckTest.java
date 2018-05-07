@@ -58,13 +58,20 @@ public class RubberDuckTest {
     }
     @Test
     public void canDie(){
-        assertEquals("Final Quack", rubberDuck.getHealthValue());
+        assertEquals("Final Quack", rubberDuck.die("Final Quack"));
     }
-//    @Test
-//    public void canDie(){
-//        rubberDuck = new RubberDuck("Dead Duck", 1, 15);
-//        sub.attack(rubberDuck);
-//        assertEquals("Final Quack", rubberDuck.getHealthValue());
-//    }
+    @Test
+    public void canBeDefeatedBySub(){
+        rubberDuck = new RubberDuck("Dead Duck", 1, 15);
+        sub.attack(rubberDuck);
+        assertEquals(0, rubberDuck.getHealthValue());
+        assertEquals("Final Quack", rubberDuck.die("Final Quack"));
+    }@Test
+    public void canBeDefeatedByTank(){
+        rubberDuck = new RubberDuck("Dead Duck", 1, 15);
+        tank.attack(rubberDuck);
+        assertEquals(-1, rubberDuck.getHealthValue());
+        assertEquals("Final Quack", rubberDuck.die("Final Quack"));
+    }
 }
 

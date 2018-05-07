@@ -45,4 +45,5 @@ public class SubTest {
         assertEquals(99, kraken.getHealthValue());
     }
 
+
 }
